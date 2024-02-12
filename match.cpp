@@ -33,18 +33,18 @@ class Match{
     queue<string> q;
     vector<string> tt;
     Match(){
-        // cout<<"Enter the date of the match:"<<endl;
+        cout<<"Enter the date of the match:"<<endl;
         cin>>date;
-        // cout<<"Enter the Name of the First Team:"<<endl;
+        cout<<"Enter the Name of the First Team:"<<endl;
         cin>>Name1;
-        // cout<<"Enter the Name of the Second Team:"<<endl;
+        cout<<"Enter the Name of the Second Team:"<<endl;
         cin>>Name2;
-        // cout<<"Enter the venue of the Match : ";
+        cout<<"Enter the venue of the Match : ";
         cin>>venue;
-        // cout<<'\n';
-        // cout<<"Enter the Name of the Toss winning Team:"<<endl;
+        cout<<'\n';
+        cout<<"Enter the Name of the Toss winning Team:"<<endl;
         cin>>TossWinnig;
-        // cout<<"Enter What the team has chosen:"<<endl;
+        cout<<"Enter What the team has chosen:"<<endl;
         cin>>Toss;
         lower(Name1);
         lower(Name2);
@@ -52,7 +52,7 @@ class Match{
         lower(TossWinnig);
         lower(Toss);
 
-        //For getting date,month and year
+        // For getting date,month and year
         vector<int> temp=getdetails(date);
         dt=temp[0];
         mn=temp[1];
@@ -61,7 +61,7 @@ class Match{
         //First team batting
         char x=getchar();
         //Input for the playing 11 of Team1
-        // cout<<"Enter the Playing 11 for the team "<<Name1<<endl;
+        cout<<"Enter the Playing 11 for the team "<<Name1<<endl;
         for(int i=0;i<=10;i++){
             string Name;
             getline(cin,Name);
@@ -76,7 +76,7 @@ class Match{
             q.pop();
         }
         //Input for the playing 11 of Team2
-        // cout<<"Enter the Playing 11 for the team "<<Name2<<endl;
+        cout<<"Enter the Playing 11 for the team "<<Name2<<endl;
         for(int i=0;i<=10;i++){
             string Name;
             getline(cin,Name);
@@ -90,7 +90,6 @@ class Match{
             tt.push_back(ele);
             q.pop();
         }
-        // x=getchar();
         if((TossWinnig==Name1 && Toss=="bowl") || (TossWinnig==Name2 && Toss=="bat")){
             swap(Name1,Name2);
         }
@@ -98,19 +97,19 @@ class Match{
 
         //Details for the first Inning
         // cout<<"---------------------Details for the First Inning---------------------\n";
-        // cout<<"Enter the batting details of the team "<<Name1<<endl;
+        cout<<"Enter the batting details of the team "<<Name1<<endl;
         for(int i=0;i<11;i++){
             string temp;
-            // cout<<"Enter the run scored by the player "<<PlayerNames[Name1][i]<<endl; 
+            cout<<"Enter the run scored by the player "<<PlayerNames[Name1][i]<<endl; 
             cin>>temp;
             pair<int,int> obj=runbowl(temp);
             runs[PlayerNames[Name1][i]].first=obj.first;
             runs[PlayerNames[Name1][i]].second=obj.second;
         }
-        // cout<<"Enter the bowling details for the team "<<Name2<<endl;
+        cout<<"Enter the bowling details for the team "<<Name2<<endl;
         for(int i=0;i<11;i++){
             string temp;
-            // cout<<"Enter the runs and wickets taken by the player "<<PlayerNames[Name2][i]<<endl;
+            cout<<"Enter the runs and wickets taken by the player "<<PlayerNames[Name2][i]<<endl;
             cin>>temp;
             pair<int,int> obj=runbowl(temp);
             wickets[PlayerNames[Name2][i]].first=obj.first;
@@ -120,19 +119,19 @@ class Match{
 
         //Details for the second Inning
         // cout<<"---------------------Details for the Second Inning---------------------\n";
-        // cout<<"Enter the batting details of the team "<<Name2<<endl;
+        cout<<"Enter the batting details of the team "<<Name2<<endl;
         for(int i=0;i<11;i++){
             string temp;
-            // cout<<"Enter the run scored by the player "<<PlayerNames[Name2][i]<<endl;                
+            cout<<"Enter the run scored by the player "<<PlayerNames[Name2][i]<<endl;                
             cin>>temp;
             pair<int,int> obj=runbowl(temp);
             runs[PlayerNames[Name2][i]].first=obj.first;
             runs[PlayerNames[Name2][i]].second=obj.second;
         }
-        // cout<<"Enter the bowling details for the team "<<Name2<<endl;
+        cout<<"Enter the bowling details for the team "<<Name2<<endl;
         for(int i=0;i<11;i++){
             string temp;
-            // cout<<"Enter the runs and wickets taken by the player "<<PlayerNames[Name1][i]<<endl;
+            cout<<"Enter the runs and wickets taken by the player "<<PlayerNames[Name1][i]<<endl;
             cin>>temp;
             pair<int,int> obj=runbowl(temp);
             wickets[PlayerNames[Name1][i]].first=obj.first;

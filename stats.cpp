@@ -51,9 +51,6 @@ void setdata(string team1,string team2,map<string,vector<string>> &PlayerNames,m
         int x=(int)1e8-batsman[it].first;
         int y=batsman[it].second;
         float z=100*batsman[it].first/max(1.0f,(float)batsman[it].second);
-        // if(bestbat.find(make_pair(make_pair(x,z),it))!=bestbat.end()){
-        //     bestbat.erase(make_pair(make_pair(x,z),it));
-        // }
         for(auto it2:bestbat){
             if(it2.second==it){
                 bestbat.erase(it2);
